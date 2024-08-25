@@ -1,0 +1,1 @@
+Console.WriteLine("문제의 정답");
