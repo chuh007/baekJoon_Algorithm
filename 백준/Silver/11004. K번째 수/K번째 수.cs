@@ -1,0 +1,10 @@
+using System.Text;
+            using System.IO;
+            StreamReader sr = new StreamReader(new BufferedStream(Console.OpenStandardInput()));
+            StreamWriter sw = new StreamWriter(new BufferedStream(Console.OpenStandardOutput()));
+            StringBuilder sb = new StringBuilder();
+int[] input = Array.ConvertAll(sr.ReadLine().Split(), int.Parse);
+            int[] arr = Array.ConvertAll(sr.ReadLine().Split(), int.Parse);
+            Array.Sort(arr);
+            sw.Write(arr[input[1]-1]);
+            sw.Flush();
