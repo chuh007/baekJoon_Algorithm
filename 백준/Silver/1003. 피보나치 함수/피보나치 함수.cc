@@ -1,12 +1,7 @@
-#include <string>
-#include <vector>
 #include<iostream>
-#include<algorithm>
-#include<stack>
-
 using namespace std;
 
-int DP[41][2] = {0};
+int DP[40][2] = {0};
 int countZero = 0;
 int countOne = 0;
 
@@ -32,9 +27,9 @@ void fibonacci(int n) {
 }
 int main()
 {
-    ios::sync_with_stdio(false); // 지우지 말 것.
-    cin.tie(NULL); // 지우지 말 것.
-    cout.tie(NULL); // 지우지 말 것.
+    ios::sync_with_stdio(false); 
+    cin.tie(NULL); 
+    cout.tie(NULL);
     
     int T;
     cin >> T;
