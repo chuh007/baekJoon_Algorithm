@@ -1,0 +1,11 @@
+using System.IO;
+StreamReader sr = new StreamReader(new BufferedStream(Console.OpenStandardInput()));
+StreamWriter sw = new StreamWriter(new BufferedStream(Console.OpenStandardOutput()));
+int[] max = Array.ConvertAll(sr.ReadLine().Split(), int.Parse);
+            int[] mel = Array.ConvertAll(sr.ReadLine().Split(), int.Parse);
+            int maxNum = max[0] * 3 + max[1] * 20 + max[2] * 120;
+            int melNum = mel[0] * 3 + mel[1] * 20 + mel[2] * 120;
+            if (maxNum > melNum) sw.Write("Max");
+            else if (maxNum < melNum) sw.Write("Mel");
+            else sw.Write("Draw");
+            sw.Flush();
