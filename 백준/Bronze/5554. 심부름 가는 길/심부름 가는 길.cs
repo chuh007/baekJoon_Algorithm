@@ -1,0 +1,11 @@
+using System.IO;
+StreamReader sr = new StreamReader(new BufferedStream(Console.OpenStandardInput()));
+StreamWriter sw = new StreamWriter(new BufferedStream(Console.OpenStandardOutput()));int a, b, c, d;
+            a = int.Parse(sr.ReadLine());
+            b = int.Parse(sr.ReadLine());
+            c = int.Parse(sr.ReadLine());
+            d = int.Parse(sr.ReadLine());
+            int sum = a + b + c + d;
+            sw.WriteLine(sum/60);
+            sw.WriteLine(sum%60);
+            sw.Flush();
