@@ -1,0 +1,13 @@
+using System.IO;
+StreamReader sr = new StreamReader(new BufferedStream(Console.OpenStandardInput()));
+StreamWriter sw = new StreamWriter(new BufferedStream(Console.OpenStandardOutput()));
+string s1 = sr.ReadLine();
+            string s2 = sr.ReadLine();
+            string s3 = sr.ReadLine();
+            bool l = false, k = false, p = false;
+            if (s1[0] == 'l' || s2[0] == 'l' || s3[0] == 'l') l = true;
+            if (s1[0] == 'k' || s2[0] == 'k' || s3[0] == 'k') k = true;
+            if (s1[0] == 'p' || s2[0] == 'p' || s3[0] == 'p') p = true;
+            if (l && k && p) sw.Write("GLOBAL");
+            else sw.Write("PONIX");
+            sw.Flush();
