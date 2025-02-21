@@ -1,0 +1,29 @@
+using System.IO;
+StreamReader sr = new StreamReader(new BufferedStream(Console.OpenStandardInput()));
+StreamWriter sw = new StreamWriter(new BufferedStream(Console.OpenStandardOutput()));
+long input = long.Parse(sr.ReadLine());
+            Dictionary<long, long> fibo = new Dictionary<long, long>();
+            sw.WriteLine(F(input));
+            sw.Flush();
+            long F(long n)
+            {
+                if (n == 0) return 0;
+                if (n == 1) return 1;
+                if (fibo.ContainsKey(n))
+                    return fibo[n];
+                long res;
+                if (n % 2 == 0)
+                {
+                    long a = n / 2;
+                    long b = F(a);
+                    res = (b % 1000000007 * (2 * F(a - 1) % 1000000007 + b) % 1000000007) % 1000000007;
+                }
+                else
+                {
+                    long a = F((n + 1) / 2);
+                    long b = F((n - 1) / 2);
+                    res = ((a % 1000000007 * a % 1000000007) % 1000000007 + (b % 1000000007 * b % 1000000007) % 1000000007) % 1000000007;
+                }
+                fibo[n] = res;
+                return res;
+            }
