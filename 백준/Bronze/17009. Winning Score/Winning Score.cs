@@ -1,0 +1,13 @@
+using System.IO;
+StreamReader sr = new StreamReader(new BufferedStream(Console.OpenStandardInput()));
+StreamWriter sw = new StreamWriter(new BufferedStream(Console.OpenStandardOutput()));
+int a, b, c, d, e, f;
+            a = int.Parse(sr.ReadLine());
+            b = int.Parse(sr.ReadLine());
+            c = int.Parse(sr.ReadLine());
+            d = int.Parse(sr.ReadLine());
+            e = int.Parse(sr.ReadLine());
+            f = int.Parse(sr.ReadLine());
+            if (a * 3 + b * 2 + c == d * 3 + e * 2 + f) sw.Write("T");
+            else sw.Write(a * 3 + b * 2 + c > d * 3 + e * 2 + f ? "A" : "B");
+            sw.Flush();
