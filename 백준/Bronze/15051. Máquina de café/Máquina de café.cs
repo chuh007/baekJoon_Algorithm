@@ -1,0 +1,12 @@
+using System.IO;
+StreamReader sr = new StreamReader(new BufferedStream(Console.OpenStandardInput()));
+StreamWriter sw = new StreamWriter(new BufferedStream(Console.OpenStandardOutput()));
+int a = int.Parse(sr.ReadLine());
+            int b = int.Parse(sr.ReadLine());
+            int c = int.Parse(sr.ReadLine());
+            int num1 = b * 2 + c * 4;
+            int num2 = a * 2 + c * 2;
+            int num3 = a * 4 + b * 2;
+            int minDistance = Math.Min(num1, Math.Min(num2, num3));
+            sw.WriteLine(minDistance);
+            sw.Flush();
