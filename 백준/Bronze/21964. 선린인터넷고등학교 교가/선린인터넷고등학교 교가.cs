@@ -1,0 +1,11 @@
+using System.IO;
+StreamReader sr = new StreamReader(new BufferedStream(Console.OpenStandardInput()));
+StreamWriter sw = new StreamWriter(new BufferedStream(Console.OpenStandardOutput()));
+int a = int.Parse(sr.ReadLine());
+            string s = sr.ReadLine();
+            sw.Write(s[s.Length - 5]);
+            sw.Write(s[s.Length - 4]);
+            sw.Write(s[s.Length - 3]);
+            sw.Write(s[s.Length - 2]);
+            sw.Write(s[s.Length - 1]);
+            sw.Flush();
