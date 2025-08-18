@@ -7,7 +7,7 @@ vector<int> v;
 int arr[12];
 bool isVisit[12];
 int n, m;
-void DFS(int nowcnt, int startidx)
+void DFS(int nowcnt)
 {
     if (nowcnt == m)
     {
@@ -25,7 +25,7 @@ void DFS(int nowcnt, int startidx)
         if (isVisit[i]) continue;
         isVisit[i] = true;
         arr[nowcnt] = v[i];
-        DFS(nowcnt + 1, i);
+        DFS(nowcnt + 1);
         isVisit[i] = false;
         before = v[i];
     }
@@ -45,7 +45,7 @@ int main()
         v.push_back(temp);
     }
     sort(v.begin(), v.end());
-    DFS(0, -1);
+    DFS(0);
 
     return 0;
 }
