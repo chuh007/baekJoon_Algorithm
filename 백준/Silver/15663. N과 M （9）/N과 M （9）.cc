@@ -21,7 +21,6 @@ void DFS(int nowcnt, int startidx)
     int before = 0;
     for (int i = 0; i < n; ++i)
     {
-        if (i == startidx) continue;
         if (before == v[i]) continue;
         if (isVisit[i]) continue;
         isVisit[i] = true;
