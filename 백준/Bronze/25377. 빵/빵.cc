@@ -9,7 +9,7 @@ int main()
 	for (int i = 0; i < n; ++i)
 	{
 		cin >> a >> b;
-		if (a < b)
+		if (a <= b)
 		{
 			if (ans > b) ans = b;
 		}
