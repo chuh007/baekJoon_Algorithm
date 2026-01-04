@@ -11,15 +11,15 @@ int main()
 	int T, N, K, x, y, w;
 	int* dArr = new int[1001]();
 	int* time = new int[1001];
-	int** list = new int* [1001];
+	bool** list = new bool* [1001];
 	for (int i = 0; i < 1001; i++)
 	{
-		list[i] = new int[1001]();
+		list[i] = new bool[1001]();
 	}
 	bool isZero = true;
 	queue<int> q;
 	cin >> T;
-	for (int t = 0;t < T; t++)
+	for (int t = 0;t < T; t++) // 테스트 케이스만큼 반복
 	{
 		cin >> N >> K;
 		for (int i = 1; i <= N; i++)
@@ -32,12 +32,14 @@ int main()
 			cin >> x >> y;
 			list[x][y] = 1;
 		}
-		for (int i = 1; i <= N; i++)
+		// 여기까지 입력받기
+
+		for (int i = 1; i <= N; i++) // 초기 진입차수 0인 애들 찾기
 		{
 			isZero = true;
 			for (int j = 1; j <= N; j++)
 			{
-				if(list[j][i] == 1)
+				if (list[j][i] == 1)
 				{
 					isZero = false;
 					break;
@@ -45,15 +47,15 @@ int main()
 			}
 			if (isZero == true)
 			{
-				q.push(i);
+				q.push(i); // 찾은 애들 큐에 넣기
 			}
 		}
-		cin >> w;
+		cin >> w; // 건설할 건물
 		while (!q.empty())
 		{
 			int v = q.front();
 			q.pop();
-			for (int i = 1;i <= N;i++)
+			for (int i = 1;i <= N;i++) // 이 노드와 연결된 노드 진입차수 감소
 			{
 				if (list[v][i] == 1)
 				{
