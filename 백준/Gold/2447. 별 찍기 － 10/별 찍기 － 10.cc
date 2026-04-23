@@ -2,7 +2,7 @@
 #include<algorithm>
 using namespace std;
 
-void PrintStar(bool** map, int now, int row, int col);
+void PrintStar(char** map, int now, int row, int col);
 
 int main()
 {
@@ -12,24 +12,24 @@ int main()
 
 	int a;
 	cin >> a;
-	bool** map = new bool* [a];
+	char** map = new char* [a];
 	for (int i = 0; i < a; i++)
 	{
-		map[i] = new bool[a]();
+		map[i] = new char[a]();
 	}
 	PrintStar(map, a, 0, 0);
 	for (int i = 0; i < a; i++)
 	{
 		for (int j = 0; j < a; j++)
 		{
-			cout << (map[i][j] ? "*" : " ");
+			cout << (map[i][j] == '*' ? "*" : " ");
 		}
 		cout << "\n";
 	}
 	delete[] map;
 }
 
-void PrintStar(bool** map, int now, int row, int col)
+void PrintStar(char** map, int now, int row, int col)
 {
 	if (now == 3)
 	{
@@ -38,9 +38,9 @@ void PrintStar(bool** map, int now, int row, int col)
 			for (int j = col;j < now + col; j++)
 			{
 				if (i == row + 1 && j == col + 1)
-					map[i][j] = false;
+					map[i][j] = ' ';
 				else
-					map[i][j] = true;
+					map[i][j] = '*';
 			}
 		}
 		return;
