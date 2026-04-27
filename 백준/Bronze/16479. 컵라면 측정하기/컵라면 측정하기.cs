@@ -1,0 +1,16 @@
+using System;
+            using System.Linq;
+            using System.Threading.Tasks;
+            using System.Numerics;
+            using System.Collections;
+            using System.Collections.Generic;
+            using System.Text;
+            using System.IO;
+            StreamReader sr = new StreamReader(new BufferedStream(Console.OpenStandardInput()));
+            StreamWriter sw = new StreamWriter(new BufferedStream(Console.OpenStandardOutput()));
+            StringBuilder sb = new StringBuilder();
+float k = int.Parse(sr.ReadLine());
+            float[] ds = Array.ConvertAll(sr.ReadLine().Split(' '), float.Parse);
+            float a = k*k-(ds[0] - ds[1])/2 * ((ds[0] - ds[1])/2);
+            sw.WriteLine(a);
+            sw.Flush();

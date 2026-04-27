@@ -1,0 +1,32 @@
+#include <iostream>
+#include <math.h>;
+using namespace std;
+
+
+int main()
+{
+	ios::sync_with_stdio(false); // 이 코드들은 빠른 입출력에 도움이 됨.
+	cin.tie(NULL); // C의 입출력과 C++의 입출력을 분리해서 속도를 2배 가까이 올려줌.
+	std::cout.tie(NULL); // 대신 이렇게 하면 C의 입출력을 사용하진 못함.
+
+	int a;
+	cin >> a;
+	for (int i = 0;i < a - 1;i++)
+	{
+		cout << " ";
+	}
+	cout << "*\n";
+	for (int i = 1;i < a;i++)
+	{
+		for (int j = a;j > i + 1;j--)
+		{
+			cout << " ";
+		}
+		cout << "* ";
+		for (int j = 0;j < i - 1;j++)
+		{
+			cout << "  ";
+		}
+		cout << "*\n";
+	}
+}

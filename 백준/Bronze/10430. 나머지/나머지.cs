@@ -1,0 +1,15 @@
+using System.Text;
+using System.IO;
+StreamReader sR = new StreamReader(new BufferedStream(Console.OpenStandardInput()));
+            StreamWriter sW = new StreamWriter(new BufferedStream(Console.OpenStandardOutput()));
+            StringBuilder sB = new StringBuilder();
+            int A, B, C;
+            int[] a = Array.ConvertAll(sR.ReadLine().Split(' '), int.Parse);
+            A = a[0];
+            B = a[1];
+            C = a[2];
+            sW.WriteLine((A + B) % C);
+            sW.WriteLine(((A % C) + (B % C)) % C);
+            sW.WriteLine((A*B) % C);
+            sW.WriteLine(((A % C) * (B % C)) % C);
+            sW.Flush();

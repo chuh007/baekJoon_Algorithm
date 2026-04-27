@@ -1,0 +1,13 @@
+using System.Text;
+using System.IO;
+StreamReader sr = new StreamReader(new BufferedStream(Console.OpenStandardInput()));
+            StreamWriter sw = new StreamWriter(new BufferedStream(Console.OpenStandardOutput()));
+            StringBuilder sb = new StringBuilder();
+            int a = int.Parse(sr.ReadLine());
+            int b = int.Parse(sr.ReadLine());
+            int c = int.Parse(sr.ReadLine());
+            if (a + b + c != 180) sw.WriteLine("Error");
+            else if (a == 60 && b == 60) sw.WriteLine("Equilateral");
+            else if (a != b && b != c&&a!=c) sw.WriteLine("Scalene");
+            else sw.WriteLine("Isosceles");
+            sw.Flush();
